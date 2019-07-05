@@ -132,7 +132,7 @@ jobs:
       - run: 
           name: Release to Heroku
           command: |
-            heroku container:release web --app $HEROKU_APP_NAME
+            CMD ["heroku container:release web --app mzamith-ml-api"]
 
 workflows:
   version: 2
