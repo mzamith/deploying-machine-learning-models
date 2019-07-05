@@ -132,7 +132,7 @@ jobs:
       - run: 
           name: Release to Heroku
           command: |
-            CMD ["heroku container:release web --app mzamith-ml-api"]
+            heroku container:release web --app $HEROKU_APP_NAME
 
 workflows:
   version: 2
@@ -149,7 +149,7 @@ workflows:
       #    filters:
       #      branches:
       #        only:
-      #         - master
+      #          - master
       # - section_10_deploy_to_heroku:
       #     requires:
       #       - train_and_upload_regression_model
@@ -160,7 +160,7 @@ workflows:
       - section_11_build_and_push_to_heroku_docker:
           requires:
             - train_and_upload_regression_model
-      #    filters:
-      #      branches:
-      #        only:
-      #          - master
+       #   filters:
+       #     branches:
+       #       only:
+       #         - master
