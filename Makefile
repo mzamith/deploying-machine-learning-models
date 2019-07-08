@@ -1,4 +1,4 @@
-NAME=mzamith-ml-api
+NAME=mzamith
 COMMIT_ID=$(shell git rev-parse HEAD)
 
 
