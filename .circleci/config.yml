@@ -112,7 +112,7 @@ jobs:
       - run:
           name: Deploy to Heroku
           command: |
-            git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git change-version:master
+            git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git develop:master
   
   build_and_push_to_heroku_docker:
     <<: *defaults
@@ -149,10 +149,10 @@ workflows:
       - deploy_to_heroku:
            requires:
             - train_and_upload_regression_model
-      #     filters:
-      #       branches:
-      #         only:
-      #           - master
+           filters:
+             branches:
+               only:
+                 - master
       # build_and_push_to_heroku_docker:
       #   requires:
       #      - train_and_upload_regression_model
