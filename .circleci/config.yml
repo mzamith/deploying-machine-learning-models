@@ -112,7 +112,7 @@ jobs:
       - run:
           name: Deploy to Heroku
           command: |
-            git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git herokudocker:master
+            git push -f https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git change-version:master
   
   build_and_push_to_heroku_docker:
     <<: *defaults
